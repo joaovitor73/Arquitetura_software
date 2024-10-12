@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contar caracteres</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      label {
+        margin-bottom: 10px;
+      }
+
+      input {
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+
+      p {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pipe e filtros</h1>
+
+    <div>
+      <label for="texto">Digite um texto:</label>
+      <input type="text" name="texto" id="texto" required />
+      <button id="contar" onclick="contar()">Contar</button>
+      <p id="resultado"></p>
+    </div>
+
+    <script>
+      function contar() {
+        let texto = document.getElementById("texto").value;
+        texto = texto.toUpperCase();
+        texto = texto.replace(/ /g, "");
+        console.log(texto);
+        const resultado = document.getElementById("resultado");
+        resultado.innerHTML = `O texto tem ${texto.length} caracteres.`;
+      }
+    </script>
+  </body>
+</html>
